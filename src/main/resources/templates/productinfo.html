@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>PRODUCT INFO</title>
 </head>
 <body>
-ПРИВЕТ ПРИВЕТ
+
+<span th:text="${prod.name}"></span> стоит
+<span th:text="${prod.price}"> </span> рублей
+<br>
+<br>
+
+<a href="/">Назад к списку товаров </a>
+
+
 </body>
 </html>

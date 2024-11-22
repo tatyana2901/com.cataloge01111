@@ -13,32 +13,25 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @SpringBootApplication
 public class Application {
-   @Autowired
+    @Autowired
     Operation op;
 
     public static void main(String[] args) {
 
         SpringApplication.run(Application.class, args);
-        
-
 
     }
 
     @GetMapping("/")
     public String getFirst(Model model) {
-        op.products.add(new Product("Чайник", 500));
-        op.products.add(new Product("Кофеварка", 1500));
-        op.products.add(new Product("Микроволновка", 100));
-            model.addAttribute("tab_lines", op.products);
-		return "catalogue-view";
+        model.addAttribute("tab_lines", op.products);
+        return "catalogue-view";
     }
 
 
-
-    @GetMapping("")
-    public String showProdInf( String id,Model model) {
-        System.out.println(id);
-
+    @GetMapping("productinfo")
+    public String showProdInf(String id, Model model) {
+        model.addAttribute("prod", op.getProductByID(id));
         return "productinfo";
     }
 

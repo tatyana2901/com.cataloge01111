@@ -13,14 +13,11 @@
         <th>Цена товара</th>
     </tr>
     <tr th:each="line : ${tab_lines}">
-        <td>  <a th:href="@{/(id = ${line.id})}" > <span th:text="${line.id}"  /> </a ></td>
-      <!--  <td>  <a th:href="@{${line.id}}" > <span th:text="${line.id}"  /> </a ></td>-->
-
-
+        <td><a th:href="@{/productinfo(id = ${line.id})}"> <span th:text="${line.id}"/> </a></td>
         <td><span th:text="${line.name}"/></td>
         <td><span th:text="${line.price}"/></td>
     </tr>
-   <!-- <a href="page/new.html">Ссылка</a>-->
+
 </table>
 </body>
 </html>
