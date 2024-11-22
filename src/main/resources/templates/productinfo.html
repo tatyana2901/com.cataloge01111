@@ -5,9 +5,9 @@
     <title>PRODUCT INFO</title>
 </head>
 <body>
-
-<span th:text="${prod.name}"></span> стоит
-<span th:text="${prod.price}"> </span> рублей
+<p th:if="${prod==null}">Продукта с указанным id не существует! </p>
+<p th:if="${prod!=null}"><span th:text="${prod.name}"></span> стоит</p>
+<p th:if="${prod!=null}"><span th:text="${prod.price}"> </span> рублей</p>
 <br>
 <br>
 

@@ -31,8 +31,24 @@ public class Application {
 
     @GetMapping("productinfo")
     public String showProdInf(String id, Model model) {
-        model.addAttribute("prod", op.getProductByID(id));
+        model.addAttribute("prod", op.getProductByID(Integer.parseInt(id)));
         return "productinfo";
+    }
+
+    @GetMapping("add")
+    public String add(String prodname, String price, Model model) {
+        op.add(prodname,price);
+        model.addAttribute("name", prodname);
+        model.addAttribute("price",price);
+        model.addAttribute("tab_lines", op.products);
+        return "redirect:/";
+    }
+
+    @GetMapping("delete")
+    public String delete(String id, Model model) {
+        op.delete(id);
+        model.addAttribute("tab_lines", op.products);
+        return "redirect:/";
     }
 
 

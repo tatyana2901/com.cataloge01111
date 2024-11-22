@@ -6,6 +6,7 @@
 </head>
 <body>
 
+
 <table border="1" style="width:300px">
     <tr>
         <th>product_id</th>
@@ -16,8 +17,18 @@
         <td><a th:href="@{/productinfo(id = ${line.id})}"> <span th:text="${line.id}"/> </a></td>
         <td><span th:text="${line.name}"/></td>
         <td><span th:text="${line.price}"/></td>
+        <td><a th:href="@{/delete(id = ${line.id})}"> Удалить </a></td>
     </tr>
 
 </table>
+<br>
+<!--<form action="/save" method="post"><button>Добавить товар</button></form>-->
+<form action="/add" method="get">
+    <input name="prodname" placeholder="Введите наименование"  required>
+    <br>
+    <input name="price" placeholder="Введите цену" required>
+    <br>
+    <input type="submit" value="Добавить товар">
+</form>
 </body>
 </html>
