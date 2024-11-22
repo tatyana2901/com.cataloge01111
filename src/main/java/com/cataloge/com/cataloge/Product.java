@@ -11,6 +11,7 @@ public class Product {
         this.id = (int) (Math.random() * 10000.0);
     }
 
+
     public String getName() {
         return name;
     }
