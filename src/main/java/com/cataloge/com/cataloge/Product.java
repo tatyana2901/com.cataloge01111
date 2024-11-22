@@ -22,6 +22,7 @@ public class Product {
         return info;
     }
 
+
     public String getName() {
         return name;
     }
